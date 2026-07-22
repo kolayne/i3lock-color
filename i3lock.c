@@ -2540,7 +2540,7 @@ int main(int argc, char *argv[]) {
 
     free(image_raw_format);
 
-    xcb_pixmap_t bg_pixmap = bg_pixmap;  // Initialized only `if (blur)`
+    xcb_pixmap_t bg_pixmap = XCB_NONE;  // Initialized only `if (blur)`
     if (blur) {
         // Make the screenshot before opening the window, blur it later
         bg_pixmap = capture_bg_pixmap(conn, screen, last_resolution);
